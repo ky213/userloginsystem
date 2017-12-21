@@ -1,0 +1,54 @@
+<div id="registrationModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Register</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row justify-content-around align-items-center flex-wrap-reverse">
+          <div class="col-sm-5">
+            <button id="facebook" type="button" class="btn btn-primary btn-block">
+              <i class="fa fa-facebook px-2"></i>Facebook</button>
+            <button id="google" type="button" class="btn btn-danger btn-block">
+              <i class="fa fa-google px-2"></i>Google</button>
+            <button id="twitter" type="button" class="btn btn-dark btn-block">
+              <i class="fa fa-twitter px-2"></i>Twitter</button>
+          </div>
+          <div class="col-sm-1">
+            <div  class="separationBar d-sm-flex flex-sm-column  align-items-center">
+              <div class="bar"></div>
+              <div class="text-center">
+                <h2 class="p-3">or</h2>
+              </div>
+              <div class="bar"></div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <form id="registrationForm" action="/register" method="POST">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input id="username" type="text" class="form-control" placeholder="Enter username">
+              </div>
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input id="email" type="email" class="form-control" placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" type="password" class="form-control" placeholder="Password" autocomplete>
+              </div>
+              <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input id="confirmPassword" type="password" class="form-control" placeholder="Confirm Password" autocomplete>
+              </div>
+              <button type="submit" class="btn btn-gray btn-block">Submit</button>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

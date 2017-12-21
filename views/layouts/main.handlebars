@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <title>Example App</title>
+    {{>head}}
+
 </head>
+
 <body>
+    <div class="container-fluid">
 
-    {{{body}}}
+        {{>topbar}}  {{{body}}}
+    </div>
 
+
+
+
+    <script src="../../dist/bundle.js"></script>
 </body>
+
 </html>
