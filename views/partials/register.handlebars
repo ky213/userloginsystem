@@ -18,7 +18,7 @@
               <i class="fa fa-twitter px-2"></i>Twitter</button>
           </div>
           <div class="col-sm-1">
-            <div  class="separationBar d-sm-flex flex-sm-column  align-items-center">
+            <div class="separationBar d-sm-flex flex-sm-column  align-items-center">
               <div class="bar"></div>
               <div class="text-center">
                 <h2 class="p-3">or</h2>
@@ -27,25 +27,31 @@
             </div>
           </div>
           <div class="col-sm-6">
-            <form id="registrationForm" action="/register" method="POST">
+            <form id="registrationForm" action="/register" method="POST" novalidate>
               <div class="form-group">
                 <label for="username">Username</label>
-                <input id="username" type="text" class="form-control" placeholder="Enter username">
+                <input id="username" type="text" class="form-control" placeholder="Enter username" pattern="[a-zA-Z][a-zA-Z0-9.-_]{5,31}" required>
+                <div class="invalid-feedback alert alert-danger"></div>
               </div>
               <div class="form-group">
-                <label for="email">Email address</label>
-                <input id="email" type="email" class="form-control" placeholder="Enter email">
+                <label for="email">Email </label>
+                <input id="email" type="email" class="form-control" placeholder="Enter email" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                  required>
+                <div class="invalid-feedback alert alert-danger"></div>
               </div>
               <div class="form-group">
                 <label for="password">Password</label>
-                <input id="password" type="password" class="form-control" placeholder="Password" autocomplete>
+                <input id="password" type="password" class="form-control" placeholder="Password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+                  autocomplete required>
+                <div class="invalid-feedback alert alert-danger"></div>
               </div>
               <div class="form-group">
                 <label for="confirmPassword">Confirm Password</label>
-                <input id="confirmPassword" type="password" class="form-control" placeholder="Confirm Password" autocomplete>
+                <input id="confirmPassword" type="password" class="form-control" placeholder="Confirm Password" autocomplete required>
+                <div class="invalid-feedback alert alert-danger"></div>
               </div>
               <button type="submit" class="btn btn-gray btn-block">Submit</button>
-              </form>
+            </form>
           </div>
         </div>
       </div>
