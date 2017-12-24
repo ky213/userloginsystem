@@ -1,6 +1,6 @@
 const path =require('path');
-const ugglifyjs = require("uglifyjs-webpack-plugin");
 const clean = require('clean-webpack-plugin');
+
 module.exports={
     entry:["babel-polyfill","./src/app.js"],
     output:{
@@ -19,7 +19,6 @@ module.exports={
         ]
     },
     plugins:[
-        new clean(['dist'])
+     
     ],
-    devtool:'source-map'
 }
