@@ -4,7 +4,7 @@ const clean = require('clean-webpack-plugin');
 module.exports={
     entry:["babel-polyfill","./src/app.js"],
     output:{
-        filename:'bundle.js',
+        filename:'bundle.[hash].js',
         path:path.resolve(__dirname,'dist')
     },
     module:{
@@ -19,6 +19,7 @@ module.exports={
         ]
     },
     plugins:[
-     
-    ],
+        new clean(["dist"])
+    ]
+   
 }
