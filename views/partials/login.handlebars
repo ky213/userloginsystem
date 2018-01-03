@@ -4,7 +4,9 @@
             <button type="button" class="close ml-auto py-2 px-3" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
+
             <div class="modal-body">
+                <div id="loginAlert" class=""></div>
                 <div class="row justify-content-around align-items-center flex-wrap-reverse">
                     <div class="col-sm-5">
                         <button id="facebook" type="button" class="btn btn-primary btn-block">
@@ -24,7 +26,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <form id="loginForm" class="" action="/login" method="POST" novalidate>
+                        <form id="loginForm" class="" action="/login" method="post" novalidate>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Email </label>
                                 <input id="loginEmail" type="email" class="form-control" placeholder="Enter email" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
@@ -37,12 +39,31 @@
                                 <div class='invalid-feedback alert alert-danger'></div>
                             </div>
                             <div class="form-check">
-                                <label class="form-check-label">
-                                    <input id="RememberMe" type="checkbox" class="form-check-input"> Remember Me
+                                <label class="custom-control custom-checkbox">
+                                    <input  type="checkbox"  id="rememberMe" class="custom-control-input" value="off">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Remember me</span>
                                 </label>
                             </div>
                             <button type="submit" class="btn btn-gray btn-block">
                                 <i></i> Submit</button>
+                            <div class="py-2">
+                                <a id="passwordReset" href="#" class="">forgot password ?</a>
+                            </div>
+
+                        </form>
+                        <form id="passwordResetForm" class="" action="/passwordReset" method="post" novalidate hidden>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email </label>
+                                <input type="email" class="form-control" placeholder="Enter email" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                                    required>
+                                <div class='invalid-feedback alert alert-danger'>This Field is required</div>
+                            </div>
+                            <button type="submit" class="btn btn-gray btn-block">
+                                <i></i> reset password</button>
+                            <button id="backButton" type="button" class="btn btn-gray btn-block">
+                                <i class="fa fa-arrow-left px-2"></i> Back</button>
+
                         </form>
                     </div>
                 </div>

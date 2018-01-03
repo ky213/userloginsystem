@@ -16,7 +16,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new html({
-      template: "./views/layouts/main.handlebars"
+      template: "./devViews/layouts/main.handlebars"
     }),
     new ugglifyjs()
   ],

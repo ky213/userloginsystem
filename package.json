@@ -5,8 +5,8 @@
   "private": true,
   "main": "server.js",
   "scripts": {
-    "serve": "webpack-dev-server --open --config webpack.dev.js",
-    "build": "webpack  --config webpack.prod.js"
+    "serve": "webpack-dev-server --port 80 --open --config webpack.dev.js",
+    "build": "webpack --watch --config webpack.prod.js"
   },
   "babel": {
     "presets": [
@@ -16,6 +16,7 @@
   "author": "Eric Ferraiuolo <eferraiuolo@gmail.com>",
   "license": "BSD",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.7.2",
     "express-handlebars": "^3.0.0",
     "jquery": "^3.2.1"
