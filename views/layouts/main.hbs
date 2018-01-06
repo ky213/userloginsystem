@@ -6,16 +6,15 @@
 
 </head>
 
-<body>
-    <div class="container-fluid">
-
-        {{>topbar}}  {{{body}}}
+<body class="d-flex flex-column justify-content-between" style="height:120vh">
+    {{>topbar}}
+    <div class="container-fluid" style="flex:1">
+        {{{body}}}
     </div>
-
-
-
     {{>footer}}
-   <script src="bundle.js"></script>
+
+
+    <script src="bundle.js"></script>
 </body>
 
 </html>

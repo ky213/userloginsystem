@@ -1,0 +1,51 @@
+<div class="row justify-content-center ">
+    <div id="alert" class="col-12 alert alert-text-center"></div>
+</div>
+<div class="row justify-content-center align-items-center align-content-center flex-wrap-reverse">
+  <div class="col-sm-4"> 
+    <button id="facebook" type="button" class="btn btn-primary btn-block">
+      <i class="fa fa-facebook px-2"></i>Facebook</button>
+    <button id="google" type="button" class="btn btn-danger btn-block">
+      <i class="fa fa-google px-2"></i>Google</button>
+    <button id="twitter" type="button" class="btn btn-dark btn-block">
+      <i class="fa fa-twitter px-2"></i>Twitter</button>
+  </div>
+  <div class="col-sm-1">
+    <div class="separationBar d-sm-flex flex-sm-column  align-items-center">
+      <div class="bar"></div>
+      <div class="or">
+        <h2 class="p-4">or</h2>
+      </div>
+      <div class="bar"></div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <form id="registrationForm" action="/register" method="post" novalidate>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input id="username" type="text" class="form-control" placeholder="Enter username" pattern="[a-zA-Z][a-zA-Z0-9.-_]{5,31}"
+          required>
+        <div class='invalid-feedback alert alert-danger'></div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email </label>
+        <input id="email" type="email" class="form-control" placeholder="Enter email" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+          required>
+        <div class='invalid-feedback alert alert-danger'></div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" type="password" class="form-control" placeholder="Password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+          autocomplete required>
+        <div class='invalid-feedback alert alert-danger'></div>
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input id="confirmPassword" type="password" class="form-control" placeholder="Confirm Password" autocomplete required>
+        <div class='invalid-feedback alert alert-danger'></div>
+      </div>
+      <button type="submit" class="btn btn-gray btn-block">
+        <i></i> Submit</button>
+    </form>
+  </div>
+  </div>

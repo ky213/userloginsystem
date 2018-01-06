@@ -24,6 +24,18 @@ app.get("/", function(req, res) {
   res.render("home");
 });
 
+app.get("/login", function(req, res) {
+  res.render("login");
+});
+
+app.get("/register", function(req, res) {
+  res.render("register");
+});
+
+app.get("/passwordreset", function(req, res) {
+  res.render("passwordReset");
+});
+
 app.all("/*", function(req, res) {
   res.status(404);
   res.render("404");
