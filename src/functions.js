@@ -14,7 +14,7 @@ export function fieldValidation(field) {
       .next(".invalid-feedback")
       .html("");
   } else {
-    if (field.id === "confirmPassword") field.pattern = $("#password").val();
+    if (field.id === "password") $("#confirmPassword")[0].pattern = field.value;
     if (field.validity.valueMissing) {
       $(field)
         .addClass("is-invalid")
@@ -45,88 +45,14 @@ export function formValidation(form) {
   });
 
   validFields = [...new Set(validFields)];
-  /* Check form validity and then return */
+  /*Return form validity*/
   return validFields.length === inputs.length;
 }
 
-export function buttonAnimation(button, animationType) {
-  if (animationType === "initial") {
-    $(button)
-      .text("submit")
-      .attr("class", "btn btn-block btn-gray");
-  }
-  if (animationType === "spin") {
-    let icon = $("<i class='fa fa-spinner fa-spin fa-pulse fa-fw fa-lg'></i>");
-    $(button)
-      .html(icon)
-      .attr("class", "btn btn-block btn-gray");
-  }
-  if (animationType === "success") {
-    let icon = $("<i class='fa fa-check fa-lg'></i>");
-    $(button)
-      .html(icon)
-      .attr("class", "btn btn-block btn-success");
-  }
-}
 
-export async function submitForm(form) {
-  let data = {};
 
-  $(form)
-    .find(
-      "#username, #email, #password, #loginEmail, #loginPassword, #rememberMe"
-    )
-    .each(function(index, field) {
-      data[field.id] = field.value;
-    });
-  return await $.ajax({
-    type: "post",
-    url: form.action,
-    data: data,
-    success: function(response) {
-      return response;
-    },
-    error: function(error) {
-      return error;
-    }
-  });
-}
 
-export function showAlert(alertBox, type, message) {
-  alertBox.text("- " + message);
-  alertBox.removeClass();
-  alertBox.addClass("alert alert-" + type);
-}
 
-export function removeAlert(alertBox) {
-  alertBox.text("");
-  alertBox.removeClass();
-}
 
-export function alterTopbar(status) {
-  if (status === "loggedIn") {
-    $("#topBar")
-      .removeClass("bg-warning")
-      .addClass("bg-success");
-    $("#socialIcons")
-      .find("a")
-      .addClass("text-dark");
-    $("#authButtons")
-      .find("a")
-      .addClass("text-dark");
-    $("#loginLink, #registerLink").addClass("d-none")
-    $("#logoutLink, #dashboardLink").removeClass("d-none")
-  } else {
-    $("#topBar")
-    .removeClass("bg-success")
-    .addClass("bg-warning");
-  $("#socialIcons")
-    .find("a")
-    .removeClass("text-dark");
-  $("#authButtons")
-    .find("a")
-    .removeClass("text-dark");
-    $("#loginLink, #registerLink").removeClass("d-none")
-    $("#logoutLink, #dashboardLink").addClass("d-none")
-  }
-}
+
+
