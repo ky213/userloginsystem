@@ -1,9 +1,14 @@
-"use strict";
+
+("use strict");
 //process.env.NODE_ENV = "production";
 const express = require("express");
 const bodyParser = require("body-parser");
 const exphbs = require("express-handlebars"); // "express-handlebars"
 const app = express();
+const global = require("./server/global");
+const login = require("./server/login");
+const register = require("./server/register");
+const pwdReset = require("./server/pwdReset");
 
 //Setup
 const hbs = exphbs.create({
@@ -14,26 +19,17 @@ app.disable("x-powered-by");
 app.engine(".hbs", hbs.engine);
 app.set("view engine", ".hbs");
 
-//Midllewares
+//Logic
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(global);
+app.use(login);
+app.use(register);
+app.use(pwdReset);
 
-//Routes
-app.get("/", function(req, res) {
-  res.render("home");
-});
-
-app.get("/login", function(req, res) {
-  res.render("login");
-});
-
-app.get("/register", function(req, res) {
-  res.render("register");
-});
-
-app.get("/passwordreset", function(req, res) {
-  res.render("passwordReset");
+app.use(function(err, req, res, next) {
+  res.render("500");
 });
 
 app.all("/*", function(req, res) {
