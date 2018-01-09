@@ -7,6 +7,7 @@ const validationMessages = {
 };
 
 export function fieldValidation(field) {
+  if (field.id === "confirmPassword") field.pattern = $("#password").val();
   if (field.validity.valid) {
     $(field)
       .addClass("is-valid")
@@ -14,7 +15,6 @@ export function fieldValidation(field) {
       .next(".invalid-feedback")
       .html("");
   } else {
-    if (field.id === "password") $("#confirmPassword")[0].pattern = field.value;
     if (field.validity.valueMissing) {
       $(field)
         .addClass("is-invalid")
@@ -48,11 +48,3 @@ export function formValidation(form) {
   /*Return form validity*/
   return validFields.length === inputs.length;
 }
-
-
-
-
-
-
-
-

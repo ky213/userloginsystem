@@ -1,19 +1,20 @@
 import { fieldValidation, formValidation } from "./functions";
 
-const loginForm = $("#loginForm");
-const formFields = loginForm.find("[type='email'],[type='password']");
+const form = $("#loginForm, #registrationForm, #passwordResetForm");
+const formFields = form.find("[type='email'],[type='password'],[type='text']");
 
 // Fields liteners
 formFields.each(function(index, field) {
   $(field).on("focus", function() {
-    $(field).on("keyup change", function() {
-      fieldValidation(field);
-    });
+    fieldValidation(field);
+  });
+  $(field).on("keyup change", function() {
+    fieldValidation(field);
   });
 });
 
 // Form validation
-$("#loginForm").on("submit", function(e) {
+form.on("submit", function(e) {
   e.preventDefault();
   let validForm = formValidation(this);
 

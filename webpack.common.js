@@ -4,9 +4,7 @@ const clean = require("clean-webpack-plugin");
 module.exports = {
   entry: {
     polyfill:["babel-polyfill", "./src/polyfill.js"],
-    login:  "./src/login.js",
-    registration:  "./src/registration.js",
-    passwordReset:"./src/passwordReset.js"
+    formValidation:"./src/formValidation.js"
   },
   output: {
     filename: "[name].js",
