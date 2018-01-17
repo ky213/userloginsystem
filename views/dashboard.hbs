@@ -1,0 +1,27 @@
+<div class="row justify-content-center align-items-center h-100">
+    <div id="menu" class="col-2 col-lg-1 col-md-1 p-1 text-center text-wight  bg-dark h-100">
+        <div>
+            <a href="/" class="text-light ">
+                <i class="py-3 p-sm-2 fa fa-home fa-lg text-center"></i>
+                <p class="text-center d-none d-sm-block">Home</p>
+            </a>
+        </div>
+        <div>
+            <a href="/dashboard/profile" class="text-light">
+                <i class="py-3 p-sm-2 fa fa-user fa-lg"></i>
+                <p class="d-none d-sm-block">Profile</p>
+            </a>
+        </div>
+        <div>
+            <a href="/dashboard/settings" class="text-light">
+                <i class=" py-3 p-sm-2 fa fa-cogs fa-lg"></i>
+                <p class="d-none d-sm-block">Settings</p>
+            </a>
+        </div>
+    </div>
+    <div id="body" class="col-10 col-lg-11 col-md-11 h-100">
+        <div class="row justify-content-center align-items-start p-5 h-100">
+            {{#if options.profile}} {{>profile}} {{/if}} {{#if options.settings}} {{>settings}} {{/if}}
+        </div>
+    </div>
+</div> 

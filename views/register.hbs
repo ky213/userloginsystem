@@ -1,8 +1,8 @@
 <div class="row justify-content-center ">
-    <div id="alert" class="col-12 alert alert-text-center"></div>
+    <div id="alert" class="col-12 alert alert-{{options.alert.color}} text-center">{{{options.alert.message}}}</div>
 </div>
 <div class="row justify-content-center align-items-center align-content-center flex-wrap-reverse">
-  <div class="col-sm-4"> 
+  <div class="col-lg-3 col-md-4 col-sm-5 mb-5"> 
     <button id="facebook" type="button" class="btn btn-primary btn-block">
       <i class="fa fa-facebook px-2"></i>Facebook</button>
     <button id="google" type="button" class="btn btn-danger btn-block">
@@ -19,7 +19,7 @@
       <div class="bar"></div>
     </div>
   </div>
-  <div class="col-sm-3">
+  <div class="col-lg-3 col-md-4 col-sm-5">
     <form id="registrationForm" action="/register" method="post" novalidate>
       <div class="form-group">
         <label for="username">Username</label>

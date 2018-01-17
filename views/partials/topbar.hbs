@@ -1,14 +1,14 @@
 <div class="container-fluid">
-    <div id="topBar" class="row bg-warning justify-content-between align-items-center p-1">
+    <div id="topBar" class="row bg-{{options.topbarColor}} justify-content-between align-items-center p-1">
         <div id="socialIcons" class="col-2 ">
             <div class="row justify-content-start">
                 <div class="px-2">
-                    <a href="https://facebook.com" target="_blank">
+                    <a href="https://facebook.com" target="_blank" {{#if options.userLoggedin}} class="text-dark" {{/if}}>
                         <i class="fa fa-facebook"></i>
                     </a>
                 </div>
                 <div class="px-2">
-                    <a href="https://twitter.com" target="_blank">
+                    <a href="https://twitter.com" target="_blank" {{#if options.userLoggedin}} class="text-dark" {{/if}}>
                         <i class="fa fa-twitter"></i>
                     </a>
                 </div>
@@ -16,23 +16,28 @@
         </div>
         <div id="authButtons" class="col-4 ">
             <div class="row justify-content-end  text-right">
+                {{#if options.userLoggedin}}
+                <div id="dashboardLink" class="px-2">
+                    <a href="/dashboard" class="text-dark">
+                        <i class="fa fa-cogs px-1"></i>Dashboard</a>
+                </div>
+                <div id="logoutLink" class="px-2">
+                    <a href="/logout" class="text-dark">
+                        <i class="fa fa-sign-out px-1"></i>Logout</a>
+                </div>
+                {{else}}
                 <div id="loginLink" class="px-2">
-                    <a href="/login" >
+                    <a href="/login">
                         <i class="fa fa-sign-in px-1"></i>Login</a>
                 </div>
 
                 <div id="registerLink" class="px-2 ">
-                    <a href="/register" >
+                    <a href="/register">
                         <i class="fa fa-user-plus px-1"></i>Register</a>
                 </div>
-                <div id="dashboardLink" class="px-2 d-none">
-                    <a href="/dashboard">
-                        <i class="fa fa-cogs px-1"></i>Dashboard</a>
-                </div>
-                <div id="logoutLink" class="px-2 d-none">
-                    <a href="/logout">
-                        <i class="fa fa-sign-out px-1"></i>Logout</a>
-                </div>
+                {{/if}} 
+                
+
             </div>
         </div>
     </div>
