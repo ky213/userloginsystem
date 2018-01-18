@@ -1,8 +1,9 @@
+ {{>facebook}}
 <div class="row justify-content-center ">
-    <div id="alert" class="col-12 alert alert-{{options.alert.color}} text-center">{{{options.alert.message}}}</div>
+  <div id="alert" class="col-12 alert alert-{{options.alert.color}} text-center">{{{options.alert.message}}}</div>
 </div>
 <div class="row justify-content-center align-items-center align-content-center flex-wrap-reverse">
-  <div class="col-lg-3 col-md-4 col-sm-5 mb-5"> 
+  <div class="col-lg-3 col-md-4 col-sm-5 mb-5">
     <button id="facebook" type="button" class="btn btn-primary btn-block">
       <i class="fa fa-facebook px-2"></i>Facebook</button>
     <button id="google" type="button" class="btn btn-danger btn-block">
@@ -23,7 +24,7 @@
     <form id="registrationForm" action="/register" method="post" novalidate>
       <div class="form-group">
         <label for="username">Username</label>
-        <input name="username" id ="username" type="text" class="form-control" placeholder="Enter username" pattern="[a-zA-Z][a-zA-Z0-9.-_]{5,31}"
+        <input name="username" id="username" type="text" class="form-control" placeholder="Enter username" pattern="[a-zA-Z][a-zA-Z0-9.-_]{5,31}"
           required>
         <div class='invalid-feedback alert alert-danger'></div>
       </div>
@@ -35,18 +36,24 @@
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input name="password"  id="password" type="password" class="form-control" placeholder="Password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+        <input name="password" id="password" type="password" class="form-control" placeholder="Password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
           autocomplete required>
         <div class='invalid-feedback alert alert-danger'></div>
       </div>
       <div class="form-group">
         <label for="confirmPassword">Confirm Password</label>
-        <input id="confirmPassword" name="confirmPassword" type="password" class="form-control" placeholder="Confirm Password" autocomplete required>
+        <input id="confirmPassword" name="confirmPassword" type="password" class="form-control" placeholder="Confirm Password" autocomplete
+          required>
         <div class='invalid-feedback alert alert-danger'></div>
       </div>
       <button type="submit" class="btn btn-gray btn-block">
         <i></i> Submit</button>
     </form>
   </div>
-  </div>
-  <script src="formValidation.js"> </script>
+</div>
+<form id="socialForm" class="d-none" action="/facebookLogin" method="post">
+  <input type="text" name="uid">
+  <input type="text" name="token">
+  <input type="text" name="status">
+</form>
+<script src="app.js"> </script>

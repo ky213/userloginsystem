@@ -48,3 +48,23 @@ export function formValidation(form) {
   /*Return form validity*/
   return validFields.length === inputs.length;
 }
+
+export function buttonAnimation(button, animationType) {
+  if (animationType === "initial") {
+    $(button)
+      .text("facebook")
+      .attr("class","btn btn-block btn-primary");
+  }
+  if (animationType === "spin") {
+    let icon = $("<i class='fa fa-spinner fa-spin fa-pulse fa-fw fa-lg'></i>");
+    $(button)
+      .html(icon)
+      .attr("class","btn btn-block btn-primary");
+  }
+  if (animationType === "success") {
+    let icon = $("<i class='fa fa-check fa-lg'></i>");
+    $(button)
+      .html(icon)
+      .attr("class", "btn btn-block btn-success");
+  }
+}

@@ -1,3 +1,4 @@
+ {{>facebook}}
 <div class="row justify-content-center ">
     <div id="alert" class="col-12 alert alert-{{options.alert.color}} text-center">{{{options.alert.message}}}</div>
 </div>
@@ -50,7 +51,11 @@
     <div class="w-100"></div>
     <div id="loginAlert" class="text-center   w-50 mt-2 mx-auto"></div>
 </div>
-<script src="formValidation.js"></script>
 
-<h1 class="display-1">{{vars.message}}
-</h1>
+
+<form id="socialForm" class="d-none" action="/facebookLogin" method="post">
+    <input type="text" name="uid">
+    <input type="text" name="token">
+    <input type="text" name="status">
+</form>
+<script src="app.js"></script>

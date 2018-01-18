@@ -3,8 +3,8 @@ const clean = require("clean-webpack-plugin");
 
 module.exports = {
   entry: {
-    polyfill:["babel-polyfill", "./src/polyfill.js"],
-    formValidation:"./src/formValidation.js"
+    polyfill:["babel-polyfill"],
+    app:"./src/app.js"
   },
   output: {
     filename: "[name].js",
